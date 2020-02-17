@@ -30,8 +30,8 @@ const App = () => {
   const [loading, setLoading] = useState(true)
 
   // form variables
-  const [startDate, setStartDate] = useState(new Date(2017, 5, 1))
-  const [endDate, setEndDate] = useState(new Date(2017, 6, 18))
+  const [startDate, setStartDate] = useState(new Date('2017-05-01'))
+  const [endDate, setEndDate] = useState(new Date('2017-07-18'))
   const [token, setToken] = useState('')
 
   // data variables
@@ -55,7 +55,7 @@ const App = () => {
       // format the date into a suitable format
       const formattedStartDate = from.toISOString().split('T', 1)[0]
       const formattedEndDate = to.toISOString().split('T', 1)[0]
-    
+      
       const headers = { 
         headers: { 
           'Authorization': auth, 
@@ -113,7 +113,7 @@ const App = () => {
       if (from !== null && from !== undefined) {
         setStartDate(new Date(from))
       } else {
-        from = '2017-5-1'
+        from = '2017-05-01'
       }
 
       if (to !== null && to !== undefined) {
